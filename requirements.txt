@@ -20,7 +20,7 @@ pandas
 scipy
 imutils
 tkinterhtml
-playsound
+pygame
 PyAutoGUI
 PyGetWindow
 PyMsgBox

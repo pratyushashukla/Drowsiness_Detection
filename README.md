@@ -1,12 +1,11 @@
 # Drowsiness Detection System(webapp)
-<a href = "https://youtu.be/YyIMsBBEukw">Click Here to see the demo</a> <br>
-<img src="https://img.shields.io/github/repo-size/fear-the-lord/Drowsiness-Detection"> <img src="https://img.shields.io/github/license/fear-the-lord/Drowsiness-Detection"> <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/fear-the-lord/Drowsiness-Detection"> <img alt="Libraries.io dependency status for GitHub repo" src="https://img.shields.io/librariesio/github/fear-the-lord/Drowsiness-Detection"> <img src = "https://hitcounter.pythonanywhere.com/count/tag.svg?url=https://github.com/fear-the-lord/Drowsiness-Detection"> <img src = "https://img.shields.io/youtube/views/YyIMsBBEukw?style=social">
 
 ## Motivation: 
-According to the National Highway Traffic Safety Administration, every year about 100,000 police-reported crashes involve drowsy driving. These crashes result in more than 1,550 fatalities and 71,000 injuries. The real number may be much higher, however, as it is difficult to determine whether a driver was drowsy at the time of a crash. So, we tried to build a system, that detects whether a person is drowsy and alert him.
+
+In Canada, drowsy driving is a serious concern, mirroring the situation in the United States. Each year, numerous accidents occur due to driver fatigue, resulting in fatalities and injuries. Efforts are underway to develop systems that can detect drowsiness and alert drivers in real-time, potentially saving lives. Given Canada's vast landscapes and long travel distances, addressing drowsy driving is crucial for road safety nationwide. Through technological advancements and collaborative initiatives, Canada is striving to mitigate the risks associated with drowsy driving and create safer roads for everyone.
 
 ## Installing and Configuring dlib:
-We need to create an enivronment in order to install dlib, as it cannot be directly installed using pip. So, follow this commands in order to install dlib into your system if you haven't installed it previously. Make sure you have Anaconda installed, as we will be doing everyting in Anaconda Prompt. 
+Pip cannot install dlib directly; instead, we must construct an environment before installing it. Therefore, if you haven't installed Dlib before, use these commands to install it on your system. As we will be working in Anaconda Prompt, make sure you have Anaconda installed. 
 ### Step 1: Update conda 
 ```bash
 conda update conda
@@ -55,7 +54,7 @@ def eye_aspect_ratio(eye):
 The eye region is marked by 6 coordinates. These coordinates can be used to find whether the eye is open or closed if the value of EAR is checked with a certain threshold value.<br>
 ![blink_detection_plot](https://user-images.githubusercontent.com/35571958/87878670-62d41400-ca03-11ea-8b96-fc4344c61a21.jpg)
 
-In the same way I have calculated the aspect ratio for the mouth to detect if a person is yawning. Although, there is no specific metric for calculating this, so I have taken for points, 2 each from the upper and lower lip and calculated the mean distance between them as: 
+In the same way we have calculated the aspect ratio for the mouth to detect if a person is yawning. Although, there is no specific metric for calculating this, so we have taken for points, 2 each from the upper and lower lip and calculated the mean distance between them as: 
 ```python 
 def mouth_aspect_ratio(mouth): 
 	A = dist.euclidean(mouth[13], mouth[19])
@@ -68,15 +67,14 @@ def mouth_aspect_ratio(mouth):
 <b>Note: Learn more about dlib</b> <a href = "http://dlib.net/">here.</a>
 
 ## Results: 
-The GUI has been created using basic HTML, CSS and JavaScript and we have used Flask to render the python code into the website. Tkinter has also been used in order to make things simpler. It has 2 buttons: Run and Exit. The GUI looks like: 
+Basic HTML, CSS, and JavaScript were used to develop the GUI, and Flask was used to render the Python code onto the webpage. To make things easier, Tkinter has also been utilized. The buttons are labeled Run and Exit. The GUI appears as follows: 
 
-The outputs of the working system detecting drowsiness is shown as: <br>
+The operating system's outputs for detecting tiredness are displayed as follows:
 
-Also, in order to keep a proof of the moment when the person was sleeping or yawning, we kept a seperate folder where those frames are stored as: <br>
+Additionally, we retained a separate folder where those frames are kept as an evidence of the moment the person was yawning or sleeping. <br>
 
 
 ## References: 
-[1]Facial landmarks with dlib, OpenCV and Python: https://www.pyimagesearch.com/2017/04/03/facial-landmarks-dlib-opencv-python/ <br>
+[1]Drowsiness Detection with OpenCV: https://www.pyimagesearch.com/2017/05/08/drowsiness-detection-opencv/ <br>
 [2]Eye blink detection with OpenCV, Python, and dlib: https://www.pyimagesearch.com/2017/04/24/eye-blink-detection-opencv-python-dlib/ <br>
-[3]Drowsiness Detection with OpenCV: https://www.pyimagesearch.com/2017/05/08/drowsiness-detection-opencv/ <br>
-[4]Real-Time Eye Blink Detection using Facial Landmarks: http://vision.fe.uni-lj.si/cvww2016/proceedings/papers/05.pdf 
+[3]Facial landmarks with dlib, OpenCV and Python: https://www.pyimagesearch.com/2017/04/03/facial-landmarks-dlib-opencv-python/ <br>
